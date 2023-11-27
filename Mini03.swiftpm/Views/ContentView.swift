@@ -1,12 +1,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("currentPage") var currentPage = 1
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+
+        if currentPage > totalPages {
+            Home()
+        }
+        else{
+            OnboardingScreen()
         }
     }
 }

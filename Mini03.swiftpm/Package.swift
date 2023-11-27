@@ -8,20 +8,20 @@ import PackageDescription
 import AppleProductTypes
 
 let package = Package(
-    name: "Mini03",
+    name: "MyGuitar",
     platforms: [
         .iOS("16.0")
     ],
     products: [
         .iOSApplication(
-            name: "Mini03",
+            name: "MyGuitar",
             targets: ["AppModule"],
             bundleIdentifier: "com.GuilhermeNunesLobo.Mini03",
             teamIdentifier: "M9H5R689TD",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .paper),
-            accentColor: .presetColor(.cyan),
+            appIcon: .asset("AppIcon"),
+            accentColor: .presetColor(.red),
             supportedDeviceFamilies: [
                 .pad,
                 .phone
@@ -31,7 +31,8 @@ let package = Package(
                 .landscapeRight,
                 .landscapeLeft,
                 .portraitUpsideDown(.when(deviceFamilies: [.pad]))
-            ]
+            ],
+            appCategory: .education
         )
     ],
     targets: [
